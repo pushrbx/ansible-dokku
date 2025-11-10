@@ -25,4 +25,4 @@ galaxy_info:
   - system
 dependencies:
 - role: geerlingguy.docker
-- role: nginxinc.nginx
+- role: geerlingguy.nginx
