@@ -21,6 +21,13 @@
     with_items:
     - sites-enabled
     - sites-available
+  
+  - name: Ensure nginx server_names_hash_bucket_size is not duplicated
+    file:
+      path: /etc/nginx/conf.d/server_names_hash_bucket_size.conf
+      state: absent
+    tags:
+    - dokku
 
   - name: nginx:new default
     copy:
