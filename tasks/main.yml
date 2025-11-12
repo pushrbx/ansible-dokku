@@ -68,3 +68,12 @@
   - dokku-plugins
   - molecule-idempotence-notest
   when: dokku_plugins is defined
+
+- name: Ensure nginx config is correct
+  copy:
+    dest: /etc/nginx/conf.d/server_names_hash_bucket_size.conf
+    content: "server_names_hash_bucket_size {{ nginx_server_names_hash_bucket_size }};"
+  when: installed_dokku_plugins.stdout.find('nginx-vhosts') > -1
+  tags:
+  - dokku
+  - dokku-plugins

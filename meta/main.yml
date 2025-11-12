@@ -26,3 +26,5 @@ galaxy_info:
 dependencies:
 - role: geerlingguy.docker
 - role: geerlingguy.nginx
+  vars:
+    nginx_conf_template: "nginx_dokku.conf.j2"
